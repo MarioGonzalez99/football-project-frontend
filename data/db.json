@@ -1,0 +1,78 @@
+{
+  "clubs": [
+    {
+      "idTeam": 1,
+      "name": "Club 1",
+      "trainer": "trainer 1"
+    },
+    {
+      "idTeam": 2,
+      "name": "Club 2",
+      "trainer": "trainer 2"
+    },
+    {
+      "idTeam": 3,
+      "name": "Club 3",
+      "trainer": "trainer 3"
+    },
+    {
+      "idTeam": 4,
+      "name": "Club 4",
+      "trainer": "trainer 4"
+    },
+    {
+      "idTeam": 5,
+      "name": "Club 5",
+      "trainer": "trainer 5"
+    },
+    {
+      "idTeam": 6,
+      "name": "Club 6",
+      "trainer": "trainer 6"
+    },
+    {
+      "idTeam": 7,
+      "name": "Club 7",
+      "trainer": "trainer 7"
+    },
+    {
+      "idTeam": 8,
+      "name": "Club 8",
+      "trainer": "trainer 8"
+    },
+    {
+      "idTeam": 9,
+      "name": "Club 9",
+      "trainer": "trainer 9"
+    }
+  ],
+  "matches":[
+    {
+      "idGame":1,
+      "date":"01-01-2000",
+      "stadium":"stadium 1",
+      "localTeam":"team 1",
+      "visitorTeam":"team 2",
+      "localTeamScore":1,
+      "visitorTeamScore":1
+    },
+    {
+      "idGame":2,
+      "date":"02-01-2000",
+      "stadium":"stadium 2",
+      "localTeam":"team 3",
+      "visitorTeam":"team 4",
+      "localTeamScore":3,
+      "visitorTeamScore":2
+    },
+    {
+      "idGame":3,
+      "date":"03-01-2000",
+      "stadium":"stadium 3",
+      "localTeam":"team 5",
+      "visitorTeam":"team 6",
+      "localTeamScore":0,
+      "visitorTeamScore":0
+    }
+  ]
+}

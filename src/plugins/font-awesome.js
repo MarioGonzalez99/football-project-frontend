@@ -6,8 +6,24 @@ import {
   faUserPlus,
   faSignInAlt,
   faSignOutAlt,
+  faTrophy,
+  faVolleyballBall,
+  faMedal,
+  faPoll,
+  faFlag,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHome, faUser, faUserPlus, faSignInAlt, faSignOutAlt);
+library.add(
+  faHome,
+  faUser,
+  faUserPlus,
+  faSignInAlt,
+  faSignOutAlt,
+  faTrophy,
+  faVolleyballBall,
+  faMedal,
+  faPoll,
+  faFlag
+);
 
 export { FontAwesomeIcon };

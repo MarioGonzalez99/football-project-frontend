@@ -1,49 +1,97 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="/" class="navbar-brand">bezKoder</a>
-      <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
-          </router-link>
-        </li>
-        <li v-if="showAdminBoard" class="nav-item">
-          <router-link to="/admin" class="nav-link">Admin Board</router-link>
-        </li>
-        <li v-if="showModeratorBoard" class="nav-item">
-          <router-link to="/mod" class="nav-link">Moderator Board</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link v-if="currentUser" to="/user" class="nav-link">User</router-link>
-        </li>
-      </div>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/">
+          <img alt="Vue logo" src="./assets/logo.png" width="60" />
+        </router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <router-link to="/home" class="nav-link">
+                <font-awesome-icon icon="home" /> Home
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/league" class="nav-link">
+                <font-awesome-icon icon="trophy" /> League
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/results" class="nav-link">
+                <font-awesome-icon icon="volleyball-ball" /> Results
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/standings" class="nav-link">
+                <font-awesome-icon icon="medal" /> Standings
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/stats" class="nav-link">
+                <font-awesome-icon icon="poll" /> Stats
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/clubs" class="nav-link">
+                <font-awesome-icon icon="flag" /> Clubs
+              </router-link>
+            </li>
+            <li v-if="showAdminBoard" class="nav-item">
+              <router-link to="/admin" class="nav-link"
+                >Admin Board</router-link
+              >
+            </li>
+            <li v-if="showModeratorBoard" class="nav-item">
+              <router-link to="/mod" class="nav-link"
+                >Moderator Board</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link v-if="currentUser" to="/user" class="nav-link"
+                >User</router-link
+              >
+            </li>
+          </ul>
 
-      <div v-if="!currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/register" class="nav-link">
-            <font-awesome-icon icon="user-plus" /> Sign Up
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link to="/login" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" /> Login
-          </router-link>
-        </li>
-      </div>
+          <div v-if="!currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link">
+                <font-awesome-icon icon="user-plus" /> Sign Up
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">
+                <font-awesome-icon icon="sign-in-alt" /> Login
+              </router-link>
+            </li>
+          </div>
 
-      <div v-if="currentUser" class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <router-link to="/profile" class="nav-link">
-            <font-awesome-icon icon="user" />
-            {{ currentUser.username }}
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" @click.prevent="logOut">
-            <font-awesome-icon icon="sign-out-alt" /> LogOut
-          </a>
-        </li>
+          <div v-if="currentUser" class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <router-link to="/profile" class="nav-link">
+                <font-awesome-icon icon="user" />
+                {{ currentUser.username }}
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" @click.prevent="logOut">
+                <font-awesome-icon icon="sign-out-alt" /> LogOut
+              </a>
+            </li>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -60,25 +108,31 @@ export default {
       return this.$store.state.auth.user;
     },
     showAdminBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
-        return this.currentUser['roles'].includes('ROLE_ADMIN');
+      if (this.currentUser && this.currentUser["roles"]) {
+        return this.currentUser["roles"].includes("ROLE_ADMIN");
       }
 
       return false;
     },
     showModeratorBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
-        return this.currentUser['roles'].includes('ROLE_MODERATOR');
+      if (this.currentUser && this.currentUser["roles"]) {
+        return this.currentUser["roles"].includes("ROLE_MODERATOR");
       }
 
       return false;
-    }
+    },
   },
   methods: {
     logOut() {
-      this.$store.dispatch('auth/logout');
-      this.$router.push('/login');
-    }
-  }
+      this.$store.dispatch("auth/logout");
+      this.$router.push("/login");
+    },
+  },
 };
 </script>
+
+<style scoped>
+nav {
+  margin-bottom: 50px;
+}
+</style>
