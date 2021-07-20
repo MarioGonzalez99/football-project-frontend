@@ -1,78 +1,186 @@
 {
   "clubs": [
     {
-      "idTeam": 1,
+      "id": 1,
       "name": "Club 1",
-      "trainer": "trainer 1"
+      "trainer": "trainer 1",
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 3
     },
     {
-      "idTeam": 2,
+      "id": 2,
       "name": "Club 2",
-      "trainer": "trainer 2"
+      "trainer": "trainer 2",
+      "gamesWon": 0,
+      "gamesLost": 1,
+      "gamesTied": 0,
+      "points": 0
     },
     {
-      "idTeam": 3,
+      "id": 3,
       "name": "Club 3",
-      "trainer": "trainer 3"
+      "trainer": "trainer 3",
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 2,
+      "points": 2
     },
     {
-      "idTeam": 4,
+      "id": 4,
       "name": "Club 4",
-      "trainer": "trainer 4"
+      "trainer": "trainer 4",
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 1,
+      "points": 1
     },
     {
-      "idTeam": 5,
+      "id": 5,
       "name": "Club 5",
-      "trainer": "trainer 5"
+      "trainer": "trainer 5",
+      "gamesWon": 0,
+      "gamesLost": 1,
+      "gamesTied": 0,
+      "points": 0
     },
     {
-      "idTeam": 6,
+      "id": 6,
       "name": "Club 6",
-      "trainer": "trainer 6"
+      "trainer": "trainer 6",
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "gamesTied": 1,
+      "points": 4
     },
     {
-      "idTeam": 7,
+      "id": 7,
       "name": "Club 7",
-      "trainer": "trainer 7"
+      "trainer": "trainer 7",
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
     },
     {
-      "idTeam": 8,
+      "id": 8,
       "name": "Club 8",
-      "trainer": "trainer 8"
+      "trainer": "trainer 8",
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
     },
     {
-      "idTeam": 9,
+      "id": 9,
       "name": "Club 9",
-      "trainer": "trainer 9"
+      "trainer": "trainer 9",
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
+    },
+    {
+      "name": "Club 10 Test",
+      "trainer": "Trainer 10 Test",
+      "id": 10,
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
+    },
+    {
+      "name": "Club 11 Test",
+      "trainer": "Trainer 11 Test",
+      "id": 11,
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
+    },
+    {
+      "name": "Club 12 Test",
+      "trainer": "Trainer 12 Test",
+      "id": 12,
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
+    },
+    {
+      "name": "Club 13 Test",
+      "trainer": "Trainer 13 Test",
+      "id": 13,
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
+    },
+    {
+      "name": "Club 14 Test",
+      "trainer": "Trainer 14 Test",
+      "id": 14,
+      "gamesWon": 0,
+      "gamesLost": 0,
+      "gamesTied": 0,
+      "points": 0
     }
   ],
-  "matches":[
+  "matches": [
     {
-      "idGame":1,
-      "date":"01-01-2000",
-      "stadium":"stadium 1",
-      "localTeam":"team 1",
-      "visitorTeam":"team 2",
-      "localTeamScore":1,
-      "visitorTeamScore":1
+      "date": "2021-07-19",
+      "stadium": "Stadium test 1",
+      "localTeam": "Club 1",
+      "visitorTeam": "Club 2",
+      "localTeamScore": "2",
+      "visitorTeamScore": "1",
+      "id": 1
     },
     {
-      "idGame":2,
-      "date":"02-01-2000",
-      "stadium":"stadium 2",
-      "localTeam":"team 3",
-      "visitorTeam":"team 4",
-      "localTeamScore":3,
-      "visitorTeamScore":2
+      "date": "2021-07-19",
+      "stadium": "stadium test 2",
+      "localTeam": "Club 3",
+      "visitorTeam": "Club 4",
+      "localTeamScore": "1",
+      "visitorTeamScore": "1",
+      "id": 2
     },
     {
-      "idGame":3,
-      "date":"03-01-2000",
-      "stadium":"stadium 3",
-      "localTeam":"team 5",
-      "visitorTeam":"team 6",
-      "localTeamScore":0,
-      "visitorTeamScore":0
+      "date": "2021-07-19",
+      "stadium": "stadium test 3",
+      "localTeam": "Club 5",
+      "visitorTeam": "Club 6",
+      "localTeamScore": "2",
+      "visitorTeamScore": "3",
+      "id": 3
+    },
+    {
+      "date": "2021-07-19",
+      "stadium": "stadium test 4",
+      "localTeam": "Club 3",
+      "visitorTeam": "Club 6",
+      "localTeamScore": "2",
+      "visitorTeamScore": "2",
+      "id": 4
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "firstName": "Leonel",
+      "lastName": "Messi",
+      "age": 34,
+      "position": "Forward",
+      "clubId": 1
+    },
+    {
+      "firstName": "Cristiano",
+      "lastName": "Ronaldo",
+      "age": "36",
+      "position": "Forward",
+      "clubId": "1",
+      "id": 2
     }
   ]
 }

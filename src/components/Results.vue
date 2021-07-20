@@ -5,7 +5,7 @@
   <div v-if="matches.length" class="container">
     <div
       v-for="match in matches"
-      :key="match.idGame"
+      :key="match.id"
       class="card text-center bg-light"
       style="margin-bottom:20px"
     >

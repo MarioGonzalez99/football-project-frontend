@@ -1,35 +1,69 @@
 <template>
   <div class="container">
-    <header class="jumbotron">
-      <h3>{{ content }}</h3>
-    </header>
+    <h3 class="jumbotron">Add Match</h3>
+    <button
+      class="btn btn-outline-dark"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseMatch"
+      aria-expanded="false"
+      aria-controls="collapseMatch"
+    >
+      Add new match
+    </button>
+    <div class="collapse" id="collapseMatch">
+      <br />
+      <MatchForm />
+    </div>
+    <br />
+    <br />
+    <h3 class="jumbotron">Add Club</h3>
+    <button
+      class="btn btn-outline-dark"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseClub"
+      aria-expanded="false"
+      aria-controls="collapseClub"
+    >
+      Add new club
+    </button>
+    <div class="collapse" id="collapseClub">
+      <br />
+      <ClubForm />
+    </div>
+    <br />
+    <br />
+    <h3 class="jumbotron">Add Player</h3>
+    <button
+      class="btn btn-outline-dark"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsePlayer"
+      aria-expanded="false"
+      aria-controls="collapsePlayer"
+    >
+      Add new player
+    </button>
+    <div class="collapse" id="collapsePlayer">
+      <br />
+      <PlayerForm />
+    </div>
+    <br />
+    <br />
   </div>
 </template>
 
 <script>
-import UserService from "../services/user.service";
-
+import MatchForm from "./MatchForm.vue";
+import ClubForm from "./ClubForm.vue";
+import PlayerForm from "./PlayerForm.vue";
 export default {
   name: "Admin",
-  data() {
-    return {
-      content: "",
-    };
-  },
-  mounted() {
-    UserService.getAdminBoard().then(
-      (response) => {
-        this.content = response.data;
-      },
-      (error) => {
-        this.content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-      }
-    );
+  components: {
+    MatchForm,
+    ClubForm,
+    PlayerForm,
   },
 };
 </script>
