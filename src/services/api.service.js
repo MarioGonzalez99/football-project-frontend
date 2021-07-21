@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/";
+const API_URL = "http://localhost:8080/";
 
 class ApiService {
   getClubsContent() {
@@ -11,6 +11,9 @@ class ApiService {
   }
   getPlayersContent() {
     return axios.get(API_URL + "players");
+  }
+  getMatchStatsContent() {
+    return axios.get(API_URL + "statisticsByMatch");
   }
   postNewMatch(form) {
     return axios.post(API_URL + "matches", form);
