@@ -10,6 +10,7 @@ import {
   faMedal,
   faPoll,
   faFlag,
+  faUserCog,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -21,7 +22,8 @@ library.add(
   faVolleyballBall,
   faMedal,
   faPoll,
-  faFlag
+  faFlag,
+  faUserCog
 );
 
 export { FontAwesomeIcon };

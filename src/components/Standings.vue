@@ -17,11 +17,11 @@
       <tbody>
         <tr v-for="club in sortedClubs" :key="club.id">
           <td>{{ club.name }}</td>
-          <td>{{ club.gamesTied + club.gamesLost + club.gamesWon }}</td>
-          <td>{{ club.points }}</td>
-          <td>{{ club.gamesWon }}</td>
-          <td>{{ club.gamesLost }}</td>
-          <td>{{ club.gamesTied }}</td>
+          <td>{{ club.wonMatches + club.lostMatches + club.tiedMatches }}</td>
+          <td>{{ club.wonMatches * 3 + club.tiedMatches }}</td>
+          <td>{{ club.wonMatches }}</td>
+          <td>{{ club.lostMatches }}</td>
+          <td>{{ club.tiedMatches }}</td>
         </tr>
       </tbody>
     </table>
@@ -40,7 +40,7 @@ export default {
     };
   },
   mounted() {
-    ApiService.getClubsContent().then(
+    ApiService.getClasificationContent().then(
       (response) => {
         this.clubs = response.data;
       },
@@ -52,7 +52,11 @@ export default {
   computed: {
     sortedClubs() {
       let sortedClubs = this.clubs;
-      return sortedClubs.sort((t1, t2) => (t1.points > t2.points ? -1 : 1));
+      return sortedClubs.sort((t1, t2) =>
+        t1.wonMatches * 3 + t1.tiedMatches > t2.wonMatches * 3 + t2.tiedMatches
+          ? -1
+          : 1
+      );
     },
   },
 };

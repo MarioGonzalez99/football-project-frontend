@@ -57,12 +57,14 @@
             class="form-select"
             id="position"
             aria-label="Position"
-            v-model="form.position"
+            v-model="form.idPosition"
           >
-            <option value="GoalKeeper">Goalkeeper</option>
-            <option value="Defender">Defender</option>
-            <option value="Midfielder">Midfielder</option>
-            <option value="Forward">Forward</option>
+            <option
+              v-for="position in positions"
+              :key="position.id"
+              :value="position.id"
+              >{{ position.name }}</option
+            >
           </select>
           <label for="position">Position</label>
         </div>
@@ -76,7 +78,7 @@
             class="form-select"
             id="clubName"
             aria-label="Club Name"
-            v-model="form.clubId"
+            v-model="form.idTeam"
           >
             <option v-for="club in clubs" :key="club.id" :value="club.id">{{
               club.name
@@ -106,10 +108,12 @@ export default {
         firstName: "",
         lastName: "",
         age: "",
-        position: "",
-        clubId: "",
+        idPosition: "",
+        idTeam: "",
+        image: "noImg.jpg",
       },
       clubs: [],
+      positions: [],
       apiMessage: "",
       successSubmit: false,
       failedSubmit: false,
@@ -117,13 +121,14 @@ export default {
   },
   mounted() {
     this.fetchClubs();
+    this.fetchPositions();
   },
   methods: {
     submit() {
       this.successSubmit = false;
       this.failedSubmit = false;
 
-      ApiService.postNewPlayer(this.form, this.form.clubId)
+      ApiService.postNewPlayer(this.form)
         .then((res) => {
           //Perform Success Action
           this.apiMessage = res.data;
@@ -131,8 +136,8 @@ export default {
             firstName: "",
             lastName: "",
             age: "",
-            position: "",
-            clubId: "",
+            idPosition: "",
+            idTeam: "",
           };
           this.successSubmit = true;
         })
@@ -150,6 +155,16 @@ export default {
       ApiService.getClubsContent().then(
         (response) => {
           this.clubs = response.data;
+        },
+        (error) => {
+          this.error = error.toString();
+        }
+      );
+    },
+    fetchPositions() {
+      ApiService.getPositionsContent().then(
+        (response) => {
+          this.positions = response.data;
         },
         (error) => {
           this.error = error.toString();

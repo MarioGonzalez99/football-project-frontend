@@ -12,7 +12,6 @@ import Register from "./components/Register.vue";
 // lazy-loaded
 const Profile = () => import("./components/Profile.vue");
 const BoardAdmin = () => import("./components/BoardAdmin.vue");
-const BoardUser = () => import("./components/BoardUser.vue");
 
 const routes = [
   {
@@ -60,12 +59,6 @@ const routes = [
     // lazy-loaded
     component: BoardAdmin,
   },
-  {
-    path: "/user",
-    name: "user",
-    // lazy-loaded
-    component: BoardUser,
-  },
 ];
 
 const router = createRouter({
@@ -83,7 +76,8 @@ router.beforeEach((to, from, next) => {
     "/standings",
     "/stats",
     "/clubs",
-    "/admin",
+    // "/admin",
+    // "/profile",
   ];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem("user");
